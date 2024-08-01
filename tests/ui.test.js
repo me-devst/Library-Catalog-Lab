@@ -9,9 +9,23 @@ test('Verify "All Books" link is visible', async({page})=> {
     //wait for the navigation bar to load
     await page.waitForSelector('nav.navbar');
 
-    //get link "All Books" link on the page
+    //get link "All Books" on the page
     const allBooksLink = await page.$('a[href="/catalog"]');
     const isLinkVisible = await allBooksLink.isVisible();
 
     expect(isLinkVisible).toBe(true);
+});
+
+test('Verify "Login" Button Is Visible', async({page})=> {
+    //open the URL application page
+    await page.goto('http://localhost:3000');
+    
+    //wait for the navigation bar to load
+    await page.waitForSelector('nav.navbar');
+
+    //get link "Login" on the page
+    const loginButton = await page.$('a[href="/login"]');
+    const isLoginButtonVisible = await loginButton.isVisible();
+
+    expect(isLoginButtonVisible).toBe(true);
 });
