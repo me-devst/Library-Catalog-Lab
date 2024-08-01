@@ -118,7 +118,6 @@ test('Verify That the User Email Address Is Visible', async({page})=> {
     //fill the input fields with the predefined credentials and click on the [Submit] button
     await page.fill('#email', 'peter@abv.bg');
     await page.fill('#password', '123456');
-
     await page.click('input[type="submit"]');
 
     //get div user text content
@@ -142,10 +141,8 @@ test('Submit the Form with Valid Credentials', async({page})=> {
 }); 
 
 test('Submit the Form with Empty Input Fields', async({page})=> {
-    //open the URL application page
+   
     await page.goto(appUrlLogin);
-    
-    //click on the [Submit] button
     await page.click('input[type="submit"]');
 
     //listen for the dialog event, visualizing an alert popup window with a warning message
@@ -160,10 +157,8 @@ test('Submit the Form with Empty Input Fields', async({page})=> {
 }); 
 
 test('Submit the Form with Empty Email Input Field', async({page})=> {
-    //open the URL application page
-    await page.goto(appUrlLogin);
-    
-    //fills in password click on the [Submit] button
+   
+    await page.goto(appUrlLogin);    
     await page.fill('#password', '123456');
     await page.click('input[type="submit"]');
 
@@ -179,10 +174,8 @@ test('Submit the Form with Empty Email Input Field', async({page})=> {
 }); 
 
 test('Submit the Form with Empty Password Input Field', async({page})=> {
-    //open the URL application page
+   
     await page.goto(appUrlLogin);
-    
-    //fills in password click on the [Submit] button
     await page.fill('#email', 'peter@abv.bg');
     await page.click('input[type="submit"]');
 
@@ -196,3 +189,5 @@ test('Submit the Form with Empty Password Input Field', async({page})=> {
     await page.$('a[href="/catalog"]'); 
     expect(page.url()).toBe(appUrlLogin);
 }); 
+
+//to Register Page, p17
