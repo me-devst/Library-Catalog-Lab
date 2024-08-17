@@ -1,4 +1,3 @@
 node_modules
 
-#results of the UI tests
-test-results
+.vscode

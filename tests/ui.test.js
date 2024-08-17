@@ -1,4 +1,5 @@
-//import the test and expect functions from the @playwright/test package. These functions are used for defining tests and making assertions within the tests
+//import the test and expect functions from the @playwright/test package.
+//These functions are used for defining tests and making assertions within the tests
 const { test, expect } = require("@playwright/test");
 const appUrl = 'http://localhost:3000';
 const appUrlLogin = 'http://localhost:3000/login';
@@ -11,7 +12,7 @@ test('Verify "All Books" link is visible', async({page})=> {
     //wait for the navigation bar to load
     await page.waitForSelector('nav.navbar');
 
-    //get link "All Books" on the page
+    //get link "All Books" on the page. $ - is used for a selector/ locator
     const allBooksLink = await page.$('a[href="/catalog"]');
     const isLinkVisible = await allBooksLink.isVisible();
 
